@@ -238,13 +238,27 @@
     /* ============================================================
        NAV
        ============================================================ */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      list-style: none;
-    }
-
+         /* ナビの文字が折り返さないようにする */
+      .nav-menu {
+        gap: 0;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      .nav-menu::-webkit-scrollbar { display: none; }
+      .nav-menu li { flex-shrink: 0; }
+      .nav-menu a {
+        font-size: 0.6rem;
+        padding: 4px 5px;
+        white-space: nowrap;      /* ← 文字を折り返さない */
+        letter-spacing: 0.02em;
+      }
+      .btn-reserve {
+        padding: 6px 10px !important;
+        font-size: 0.62rem !important;
+        white-space: nowrap;
+      }
     .nav-menu a {
       font-family: var(--font-sans);
       font-size: 0.88rem;
